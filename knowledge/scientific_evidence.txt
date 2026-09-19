@@ -1,54 +1,106 @@
-SCIENTIFIC EVIDENCE DATABASE
+SCIENTIFIC EVIDENCE 1
 
-EVIDENCE 1
 Recommendation: Introduce cover crops or legume intercropping
+
 Source organization: Food and Agriculture Organization of the United Nations (FAO)
-Source: Soil organic cover - Conservation Agriculture
-Evidence: FAO explains that cover crops can improve soil properties, protect soil during fallow periods, recycle nutrients, improve soil structure, and increase biodiversity in agro-ecosystems.
-Relevant metrics: Soil organic carbon, soil moisture, soil structure, biodiversity
-Source URL: https://www.fao.org/conservation-agriculture/in-practice/soil-organic-cover/en/
+
+Source: Soil Organic Cover - Conservation Agriculture
+
+Evidence:
+FAO explains that cover crops can improve soil properties, protect soil during fallow periods, recycle nutrients, improve soil structure and increase biodiversity in agro-ecosystems.
+
+Relevant metrics:
+Soil organic carbon, soil moisture, soil structure, biodiversity
+
+Source URL:
+https://www.fao.org/conservation-agriculture/in-practice/soil-organic-cover/en/
 
 
-EVIDENCE 2
+SCIENTIFIC EVIDENCE 2
+
 Recommendation: Improve water conservation
+
 Source organization: Food and Agriculture Organization of the United Nations (FAO)
-Source: The importance of soil organic matter
-Evidence: FAO explains that soil organic matter affects soil structure, moisture-holding capacity, infiltration, and biological activity. Crop residues can improve infiltration, reduce evaporation, and increase soil moisture.
-Relevant metrics: Soil moisture, water availability, organic matter
-Source URL: https://www.fao.org/4/a0100e/a0100e08.htm
+
+Source: The Importance of Soil Organic Matter
+
+Evidence:
+FAO explains that soil organic matter affects soil structure, moisture-holding capacity, infiltration and biological activity. Crop residues can improve infiltration, reduce evaporation and increase soil moisture.
+
+Relevant metrics:
+Soil moisture, water availability, organic matter
+
+Source URL:
+https://www.fao.org/4/a0100e/a0100e08.htm
 
 
-EVIDENCE 3
+SCIENTIFIC EVIDENCE 3
+
 Recommendation: Increase crop and habitat diversity
+
 Source organization: Food and Agriculture Organization of the United Nations (FAO)
+
 Source: The 10 Elements of Agroecology - Diversity
-Evidence: FAO describes diversification through intercropping, crop rotations, agroforestry and other approaches as a way to increase biological diversity and support ecosystem functions such as pollination and nutrient cycling.
-Relevant metrics: Species richness, habitat diversity, pollinator resources
-Source URL: https://www.fao.org/agroecology/overview/the-10-elements-of-agroecology/diversity/en/
+
+Evidence:
+FAO describes diversification through intercropping, crop rotations, agroforestry and other approaches as ways to increase biological diversity and support ecosystem functions such as pollination and nutrient cycling.
+
+Relevant metrics:
+Species richness, habitat diversity, pollinator resources
+
+Source URL:
+https://www.fao.org/agroecology/overview/the-10-elements-of-agroecology/diversity/en/
 
 
-EVIDENCE 4
+SCIENTIFIC EVIDENCE 4
+
 Recommendation: Increase crop and habitat diversity
+
 Source organization: Scientific Advances / peer-reviewed research
+
 Source: Agricultural diversification promotes multiple ecosystem services without compromising yield
-Evidence: A review of 98 meta-analyses and 5,160 original studies found that agricultural diversification enhanced biodiversity and ecosystem services including pollination, pest control, nutrient cycling, soil fertility and water regulation, although responses were context-dependent.
-Relevant metrics: Biodiversity, pollination, soil fertility, water regulation
-Source URL: https://www.science.org/doi/10.1126/sciadv.aba1715
+
+Evidence:
+A review of agricultural diversification research found that diversification can enhance biodiversity and ecosystem services including pollination, pest control, nutrient cycling, soil fertility and water regulation. Effects can vary according to context.
+
+Relevant metrics:
+Biodiversity, pollination, soil fertility, water regulation
+
+Source URL:
+https://www.science.org/doi/10.1126/sciadv.aba1715
 
 
-EVIDENCE 5
+SCIENTIFIC EVIDENCE 5
+
 Recommendation: Cover crops
+
 Source organization: Agriculture, Ecosystems & Environment
+
 Source: Soil organic carbon fractions in response to soil, environmental and agronomic factors under cover cropping systems: A global meta-analysis
-Evidence: A global meta-analysis reported increases in several soil organic carbon fractions under cover cropping, with the magnitude varying according to soil, environmental and management conditions.
-Relevant metrics: Soil organic carbon, microbial biomass carbon
-Source URL: https://doi.org/10.1016/j.agee.2023.108591
+
+Evidence:
+A global meta-analysis reported increases in several soil organic carbon fractions under cover cropping, with the magnitude varying according to soil, environmental and management conditions.
+
+Relevant metrics:
+Soil organic carbon, microbial biomass carbon
+
+Source URL:
+https://doi.org/10.1016/j.agee.2023.108591
 
 
-EVIDENCE 6
+SCIENTIFIC EVIDENCE 6
+
 Recommendation: Create habitat corridors and native vegetation patches
+
 Source organization: Food and Agriculture Organization of the United Nations (FAO)
-Source: Crop diversification for pollinator conservation
-Evidence: FAO summarizes research indicating that intercropping, flowering crops and other diversification measures can increase floral resources and landscape connectivity that benefit pollinators, while noting that effects can vary among species.
-Relevant metrics: Pollinator biodiversity, habitat connectivity, habitat diversity
-Source URL: https://www.fao.org/agroecology/in-action/detail/crop-diversification-for-pollinator-conservation/en/
+
+Source: Crop Diversification for Pollinator Conservation
+
+Evidence:
+FAO summarizes research indicating that intercropping, flowering crops and other diversification measures can increase floral resources and landscape connectivity that benefit pollinators. Effects can vary among species.
+
+Relevant metrics:
+Pollinator biodiversity, habitat connectivity, habitat diversity
+
+Source URL:
+https://www.fao.org/agroecology/in-action/detail/crop-diversification-for-pollinator-conservation/en

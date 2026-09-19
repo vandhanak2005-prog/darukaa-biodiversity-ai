@@ -1,23 +1,12 @@
-LAND USE AND HUMAN IMPACT KNOWLEDGE
+LAND USE KNOWLEDGE
 
-Land-use change can alter habitat availability, habitat connectivity and ecological processes.
+Land use and land cover influence habitat availability, habitat connectivity and biodiversity.
 
-Agricultural intensification can simplify landscapes and reduce habitat diversity when natural or semi-natural vegetation is removed.
+Agricultural intensification and monoculture can reduce habitat complexity and ecological connectivity.
 
-Monoculture systems contain a limited number of crop species and can provide fewer habitat types than diversified agricultural landscapes.
+Increasing vegetation diversity through crop diversification, intercropping, agroforestry, native vegetation patches and habitat corridors can provide greater habitat resources and improve ecological connectivity.
 
-Agroforestry combines trees with crops or livestock and can increase structural diversity and provide additional habitat. Its suitability depends on local climate, soil, crop requirements and available water.
+Land-use recommendations should consider soil health, rainfall, temperature, water availability and biodiversity together.
 
-Intercropping involves growing multiple crop species together and can increase crop diversity compared with monoculture systems.
-
-Habitat restoration should consider native species, local climate, water availability and existing land use.
-
-Important relationships:
-
-Monoculture + low habitat diversity
-→ reduced habitat complexity.
-
-Diversified vegetation + suitable local conditions
-→ potentially greater habitat resources and ecological connectivity.
-
-Land-use recommendations should consider soil, rainfall, temperature and biodiversity together.
+Relevant metrics:
+Land use, habitat diversity, habitat connectivity, species richness, biodiversity

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { searchKnowledge } from "./knowledgeSearch";
 import { getChatResponse } from "./chatbot";
 import "./App.css";
 
@@ -21,7 +20,6 @@ function App() {
   });
 
   const [scores, setScores] = useState(null);
-  const [knowledgeResults, setKnowledgeResults] = useState([]);
   const [recommendations, setRecommendations] = useState([]);
 
   const [chatQuestion, setChatQuestion] = useState("");
@@ -48,6 +46,7 @@ function App() {
   // --------------------------------
   // HANDLE FORM INPUT
   // --------------------------------
+
   const handleChange = (e) => {
     setProject({
       ...project,
@@ -58,6 +57,7 @@ function App() {
   // --------------------------------
   // CALCULATE SCORES
   // --------------------------------
+
   const calculateScores = () => {
     let soilHealth = 50;
     let biodiversity = 50;
@@ -89,13 +89,13 @@ function App() {
     }
 
     if (
-      project.habitatDiversity.toLowerCase() === "high"
+      String(project.habitatDiversity).toLowerCase() === "high"
     ) {
       biodiversity += 20;
     }
 
     if (
-      project.landUse
+      String(project.landUse)
         .toLowerCase()
         .includes("monoculture")
     ) {
@@ -118,13 +118,13 @@ function App() {
     waterStress = Math.min(100, waterStress);
 
     if (
-      project.habitatDiversity.toLowerCase() === "low"
+      String(project.habitatDiversity).toLowerCase() === "low"
     ) {
       habitatRisk += 20;
     }
 
     if (
-      project.deforestation.toLowerCase() === "high"
+      String(project.deforestation).toLowerCase() === "high"
     ) {
       habitatRisk += 30;
     }
@@ -152,8 +152,9 @@ function App() {
   // --------------------------------
   // GENERATE RECOMMENDATIONS
   // --------------------------------
+
   const generateRecommendations = () => {
-    const recommendations = [];
+    const generated = [];
 
     const organicCarbon = Number(project.organicCarbon);
     const moisture = Number(project.soilMoisture);
@@ -161,7 +162,7 @@ function App() {
     const species = Number(project.speciesRichness);
 
     if (organicCarbon < 0.5 && moisture < 25) {
-      recommendations.push({
+      generated.push({
         title:
           "Introduce cover crops or legume intercropping",
 
@@ -188,12 +189,12 @@ function App() {
     }
 
     if (
-      project.landUse
+      String(project.landUse)
         .toLowerCase()
         .includes("monoculture") ||
-      project.habitatDiversity.toLowerCase() === "low"
+      String(project.habitatDiversity).toLowerCase() === "low"
     ) {
-      recommendations.push({
+      generated.push({
         title:
           "Increase crop and habitat diversity",
 
@@ -220,7 +221,7 @@ function App() {
     }
 
     if (rainfall < 600 && moisture < 25) {
-      recommendations.push({
+      generated.push({
         title:
           "Improve water conservation",
 
@@ -247,7 +248,7 @@ function App() {
     }
 
     if (species < 20) {
-      recommendations.push({
+      generated.push({
         title:
           "Create habitat corridors and native vegetation patches",
 
@@ -273,45 +274,29 @@ function App() {
       });
     }
 
-    return recommendations;
+    return generated;
   };
 
   // --------------------------------
   // ANALYZE PROJECT
   // --------------------------------
+
   const analyzeProject = () => {
     const calculatedScores = calculateScores();
-
-    const retrievedKnowledge = searchKnowledge(
-      `${project.name}
-      ${project.region}
-      ${project.soilPH}
-      ${project.organicCarbon}
-      ${project.soilMoisture}
-      ${project.rainfall}
-      ${project.temperature}
-      ${project.landUse}
-      ${project.crop}
-      ${project.speciesRichness}
-      ${project.habitatDiversity}
-      ${project.pollution}
-      ${project.deforestation}`
-    );
-
     const generatedRecommendations =
       generateRecommendations();
 
     setScores(calculatedScores);
-    setKnowledgeResults(retrievedKnowledge);
     setRecommendations(generatedRecommendations);
 
-    // Clear old chat when a new project is analyzed
+    // Clear previous conversation when a new project is analyzed
     setChatMessages([]);
   };
 
   // --------------------------------
   // FORM SUBMIT
   // --------------------------------
+
   const handleSubmit = (e) => {
     e.preventDefault();
     analyzeProject();
@@ -320,6 +305,7 @@ function App() {
   // --------------------------------
   // IMPORT JSON
   // --------------------------------
+
   const handleJsonImport = () => {
     try {
       const data = JSON.parse(jsonInput);
@@ -365,17 +351,17 @@ function App() {
   // --------------------------------
   // CHATBOT
   // --------------------------------
-  const handleChatSubmit = (e) => {
+
+  const handleChatSubmit = async (e) => {
     e.preventDefault();
 
     if (!chatQuestion.trim() || !scores) {
       return;
     }
 
-    const answer = getChatResponse(
+    const answer = await getChatResponse(
       chatQuestion,
       project,
-      scores,
       chatMessages
     );
 
@@ -393,6 +379,7 @@ function App() {
   // --------------------------------
   // UI
   // --------------------------------
+
   return (
     <div className="app">
 
@@ -449,7 +436,6 @@ function App() {
           )}
 
         </div>
-
 
         {/* ENVIRONMENTAL PROJECT */}
 
@@ -578,7 +564,6 @@ function App() {
 
         </div>
 
-
         {/* SCORES */}
 
         {scores && (
@@ -617,40 +602,6 @@ function App() {
 
           </div>
         )}
-
-
-        {/* RETRIEVED KNOWLEDGE */}
-
-        {scores && (
-          <div className="card">
-
-            <h2>🔎 Retrieved Knowledge</h2>
-
-            {knowledgeResults.length === 0 ? (
-              <p>
-                No relevant knowledge found.
-              </p>
-            ) : (
-              knowledgeResults.map(
-                (item, index) => (
-
-                  <div key={index}>
-
-                    <h3>{item.name}</h3>
-
-                    <p>
-                      Retrieval Score: {item.score}
-                    </p>
-
-                  </div>
-
-                )
-              )
-            )}
-
-          </div>
-        )}
-
 
         {/* RECOMMENDATIONS */}
 
@@ -738,7 +689,6 @@ function App() {
           </div>
         )}
 
-
         {/* CHATBOT */}
 
         {scores && (
@@ -770,7 +720,6 @@ function App() {
               </button>
 
             </form>
-
 
             {chatMessages.map(
               (message, index) => (
