@@ -13,17 +13,18 @@ app = FastAPI(
 )
 
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "https://darukaa-biodiversity-ai-zeta.vercel.app",
         "http://localhost:5173",
-        "https://darukaa-biodiversity-ai-zeta.vercel.app"
     ],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
-    allow_headers=["*"]
+    allow_headers=["*"],
 )
-
 
 class QuestionRequest(BaseModel):
     question: str
