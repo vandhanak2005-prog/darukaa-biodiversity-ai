@@ -1,19 +1,10 @@
 from pathlib import Path
-
 import chromadb
-from sentence_transformers import SentenceTransformer
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 KNOWLEDGE_DIR = BASE_DIR / "knowledge"
 CHROMA_DIR = Path(__file__).resolve().parent / "chroma_db"
-
-
-print("Loading embedding model...")
-
-model = SentenceTransformer("all-MiniLM-L6-v2")
-
-print("Embedding model loaded.")
 
 
 client = chromadb.PersistentClient(
@@ -36,13 +27,6 @@ knowledge_files = list(
 )
 
 
-print(
-    "Found "
-    + str(len(knowledge_files))
-    + " knowledge files."
-)
-
-
 for file_path in knowledge_files:
 
     text = file_path.read_text(
@@ -52,8 +36,6 @@ for file_path in knowledge_files:
     if not text:
         continue
 
-
-    # Scientific evidence gets split by evidence record
     if file_path.name == "scientific_evidence.txt":
 
         records = text.split(
@@ -94,7 +76,6 @@ for file_path in knowledge_files:
 
     else:
 
-        # Other knowledge files use smaller chunks
         chunks = [
             text[i:i + 1000]
             for i in range(
@@ -123,27 +104,13 @@ for file_path in knowledge_files:
             )
 
 
-print(
-    "Creating embeddings for "
-    + str(len(documents))
-    + " documents..."
-)
-
-
-embeddings = model.encode(
-    documents
-).tolist()
-
-
 collection.upsert(
     ids=ids,
     documents=documents,
-    embeddings=embeddings,
     metadatas=metadatas
 )
 
 
-print()
 print("====================================")
 print("RAG KNOWLEDGE INDEX CREATED")
 print("====================================")
@@ -154,8 +121,5 @@ print(
 print(
     "Vector database: "
     + str(CHROMA_DIR)
-)
-print(
-    "Embedding model: all-MiniLM-L6-v2"
 )
 print("====================================")
