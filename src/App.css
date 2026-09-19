@@ -1,0 +1,287 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #eef5f0;
+  color: #1d2b24;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* ---------------- HEADER ---------------- */
+
+header {
+  background: linear-gradient(135deg, #123d2b, #237a4b);
+  color: white;
+  padding: 35px 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 0.3px;
+}
+
+header p {
+  margin: 10px 0 0;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* ---------------- MAIN ---------------- */
+
+main {
+  max-width: 1150px;
+  margin: 35px auto;
+  padding: 0 20px 50px;
+}
+
+/* ---------------- CARDS ---------------- */
+
+.card {
+  background: white;
+  padding: 28px;
+  margin-bottom: 25px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+  border: 1px solid #e1ebe4;
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #174c34;
+  font-size: 23px;
+}
+
+.card h3 {
+  color: #236c48;
+}
+
+/* ---------------- FORMS ---------------- */
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #ccd8d0;
+  border-radius: 9px;
+  font-size: 15px;
+  background: #fbfdfc;
+  color: #1d2b24;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #2d8b5b;
+  box-shadow: 0 0 0 3px rgba(45, 139, 91, 0.12);
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+button {
+  grid-column: 1 / -1;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 9px;
+  background: #237a4b;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #185c37;
+  transform: translateY(-1px);
+}
+
+/* ---------------- JSON AREA ---------------- */
+
+textarea {
+  resize: vertical;
+  min-height: 260px;
+  line-height: 1.5;
+}
+
+/* ---------------- SCORE SECTION ---------------- */
+
+.results {
+  background: #f8fcf9;
+}
+
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.score-grid > div {
+  background: white;
+  border: 1px solid #dce9e0;
+  border-radius: 13px;
+  padding: 20px 12px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.score-grid h3 {
+  font-size: 15px;
+  margin: 0 0 12px;
+  color: #315c45;
+}
+
+.score-grid p {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+  color: #17643b;
+}
+
+/* ---------------- KNOWLEDGE ---------------- */
+
+.card > div:not(.score-grid):not(.recommendation):not(.chat-message) {
+  margin-bottom: 15px;
+}
+
+.card > div:not(.score-grid):not(.recommendation):not(.chat-message) h3 {
+  margin-bottom: 5px;
+}
+
+.card > div:not(.score-grid):not(.recommendation):not(.chat-message) p {
+  margin-top: 5px;
+  color: #66756c;
+}
+
+/* ---------------- RECOMMENDATIONS ---------------- */
+
+.recommendation {
+  background: #f8fcf9;
+  border-left: 5px solid #2c8a58;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 18px;
+}
+
+.recommendation h3 {
+  margin-top: 0;
+  color: #174c34;
+}
+
+.recommendation p {
+  line-height: 1.6;
+  color: #45564c;
+}
+
+.recommendation strong {
+  color: #214b35;
+}
+
+.recommendation a,
+.chat-message a {
+  color: #187447;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.recommendation a:hover,
+.chat-message a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------- CHATBOT ---------------- */
+
+.chatbot {
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #f7fbf8
+  );
+}
+
+.chatbot form {
+  margin-bottom: 20px;
+}
+
+.chat-message {
+  background: #f1f8f3;
+  border: 1px solid #d8e9dd;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.chat-message p {
+  line-height: 1.6;
+  color: #405148;
+}
+
+.chat-message strong {
+  color: #174c34;
+}
+
+/* ---------------- ERROR ---------------- */
+
+p[style*="color: red"] {
+  background: #fff1f1;
+  border: 1px solid #f1caca;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 900px) {
+  .score-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 25px 20px;
+  }
+
+  header h1 {
+    font-size: 25px;
+  }
+
+  main {
+    padding: 0 12px 30px;
+    margin-top: 20px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .score-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  .score-grid {
+    grid-template-columns: 1fr;
+  }
+}
